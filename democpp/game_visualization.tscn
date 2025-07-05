@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://crk17pumwhb0a"]
+
+[ext_resource type="Script" uid="uid://bntckrkj3m1rg" path="res://game_visualization.gd" id="1_2y1b0"]
+[ext_resource type="Script" uid="uid://b3him1h1rnmhe" path="res://world_info_panel.gd" id="1_jn8v8"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_2y1b0")
+
+[node name="WorldInfoPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(300, 150)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jn8v8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WorldInfoPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MapSizeLabel" type="Label" parent="WorldInfoPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="PlayerCountLabel" type="Label" parent="WorldInfoPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="TickRateLabel" type="Label" parent="WorldInfoPanel/VBoxContainer"]
+layout_mode = 2
