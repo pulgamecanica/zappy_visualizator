@@ -29,7 +29,7 @@ void Player::set_orientation(Orientation o) {
     orientation_ = o;
 }
 
-Orientation Player::get_orientation() const {
+zappy::Orientation Player::get_orientation() const {
     return orientation_;
 }
 
@@ -41,13 +41,9 @@ int Player::get_level() const {
     return level_;
 }
 
-void Player::set_team_name(const std::string& name) {
-    team_name_ = name;
-}
+void Player::set_team_name(const String& name) { team_name_ = name; }
 
-const std::string& Player::get_team_name() const {
-    return team_name_;
-}
+String Player::get_team_name() const { return team_name_; }
 
 void Player::add_resource(ResourceType type, int count) {
     std::size_t index = static_cast<std::size_t>(type);

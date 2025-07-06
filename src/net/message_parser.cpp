@@ -41,7 +41,6 @@ void MessageParser::parse_message(const godot::String& msg, zappy::World* world)
             if (i < parts.size() - 1)
                 team_name += " ";
         }
-        std::string team_name_std = team_name.utf8().get_data();
 
         UtilityFunctions::print(vformat("Player %d at (%d, %d), orientation %d, level %d, team: %s",
             id, x, y, orientation, level, team_name));
@@ -49,7 +48,7 @@ void MessageParser::parse_message(const godot::String& msg, zappy::World* world)
         Player parsed(id, Vector2i(x, y));
         parsed.set_orientation(orientation);
         parsed.set_level(level);
-        parsed.set_team_name(team_name_std);
+        parsed.set_team_name(team_name);
         world->add_player(parsed);
     }
     else if (cmd == "tna") {

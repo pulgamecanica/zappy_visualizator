@@ -3,6 +3,7 @@
 #include <array>
 #include <string>
 #include <godot_cpp/variant/vector2i.hpp>
+#include <godot_cpp/variant/string.hpp>
 #include "resource_type.h"
 
 namespace zappy {
@@ -29,8 +30,8 @@ public:
     void set_level(int level);
     int get_level() const;
 
-    void set_team_name(const std::string& name);
-    const std::string& get_team_name() const;
+    void set_team_name(const godot::String& name);
+    godot::String get_team_name() const;
 
     void add_resource(ResourceType type, int count);
     int get_resource(ResourceType type) const;
@@ -40,8 +41,7 @@ private:
     godot::Vector2i position_;
     Orientation orientation_ = Orientation::NORTH;
     int level_ = 1;
-    std::string team_name_;
-
+    godot::String team_name_;
     std::array<int, NUM_RESOURCES> inventory_;
 };
 
